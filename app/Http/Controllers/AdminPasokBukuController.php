@@ -13,7 +13,7 @@ class AdminPasokBukuController extends Controller
     {
         $user = Auth::user();
 
-        return view('admin/pasok_buku', compact('user'));
+        return view('admin.pasok_buku.index', compact('user'));
     }
 
     public function getPasok ()

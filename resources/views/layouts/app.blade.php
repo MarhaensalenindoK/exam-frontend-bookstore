@@ -36,40 +36,40 @@
     </nav>
 
     <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <ul class=" text-decoration-none list-unstyled">
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Inputan
-                  </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <li><a class="dropdown-item" href="#">Input Distributor</a></li>
-                          <li><a class="dropdown-item" href="#">Input Buku</a></li>
-                      </ul>
-              </li>
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Tambah
-                  </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <li><a class="dropdown-item" href="#">Input Pasok Buku</a></li>
-                      </ul>
-              </li>
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Laporan
-                  </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <li><a class="dropdown-item" href="#">Semua Data Buku</a></li>
-                          <li><a class="dropdown-item" href="#">Filter Penulis Buku</a></li>
-                          <li><a class="dropdown-item" href="#">Buku yang Sering Terjual</a></li>
-                          <li><a class="dropdown-item" href="#">Buku yang Tidak Pernah Terjual</a></li>
-                          <li><a class="dropdown-item" href="{{url(Auth::user()->level.'/pasok-buku')}}">Pasok Buku</a></li>
-                          <li><a class="dropdown-item" href="#">Filter Pasok Buku</a></li>
-                      </ul>
-              </li>
-          </ul>
+        <div class="row">
+            <div class="col-md-3">
+            <ul class=" text-decoration-none list-unstyled">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Inputan
+                    </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Input Distributor</a></li>
+                            <li><a class="dropdown-item" href="#">Input Buku</a></li>
+                        </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Tambah
+                    </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Input Pasok Buku</a></li>
+                        </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Laporan
+                    </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Semua Data Buku</a></li>
+                            <li><a class="dropdown-item" href="#">Filter Penulis Buku</a></li>
+                            <li><a class="dropdown-item" href="#">Buku yang Sering Terjual</a></li>
+                            <li><a class="dropdown-item" href="#">Buku yang Tidak Pernah Terjual</a></li>
+                            <li><a class="dropdown-item" href="{{url(Auth::user()->level.'/pasok-buku')}}">Pasok Buku</a></li>
+                            <li><a class="dropdown-item" href="{{url(Auth::user()->level.'/filter-pasok-buku')}}">Filter Pasok Buku</a></li>
+                        </ul>
+                </li>
+            </ul>
         </div>
         <div class="col-md-9">
           @yield('content')
