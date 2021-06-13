@@ -31,6 +31,7 @@ Route::group(['middleware' => ['auth']],function(){
         Route::prefix('admin')->group(function () {
             Route::resource('/', AdminStoreController::class);
             Route::get('/pasok-buku', [Controllers\AdminPasokBukuController::class, 'index']);
+            Route::get('/get-pasok', [Controllers\AdminPasokBukuController::class, 'getPasok']);
             Route::get('/filter-pasok-by-year', [Controllers\AdminPasokBukuController::class, 'pasokByYear']);
         });
     });

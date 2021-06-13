@@ -4,15 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Suply;
+use Illuminate\Support\Facades\Auth;
 
 class AdminPasokBukuController extends Controller
 {
 
     public function index ()
     {
-        // $suplys = Suply::where('tanggal', '2021-06-13')->orderBy('tanggal', 'asc');
+        $user = Auth::user();
+
+        return view('admin/pasok_buku', compact('user'));
+    }
+
+    public function getPasok ()
+    {
         $suplys = Suply::all();
-        // dd($suplys->where('tanggal', '2021-06-13'));
         $dataSuply = [];
         foreach($suplys as $suply){
             $suply['distributor'] = $suply->distributor;
@@ -20,7 +26,7 @@ class AdminPasokBukuController extends Controller
             array_push($dataSuply , $suply);
         }
 
-        return view('admin/pasok_buku', compact('dataSuply'));
+        return $dataSuply;
     }
 
     public function pasokByYear (Request $req)
