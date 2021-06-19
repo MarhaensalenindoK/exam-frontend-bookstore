@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Distributor;
 use Illuminate\Http\Request;
 use Faker\Factory as Faker;
 use Illuminate\Support\Facades\Auth;
 
-class AdminInputBukuController extends Controller
+class AdminInputController extends Controller
 {
-    public function index ()
+    public function indexInputBuku ()
     {
         $faker = Faker::create('id_ID');
         $books = Book::all();
@@ -61,6 +62,45 @@ class AdminInputBukuController extends Controller
     public function deleteBook($id_buku){
         $book = Book::where('id_buku', $id_buku);
         $book->delete();
+
+        return back()->with('success', 'Data Berhasil Dihapus');
+    }
+
+    public function indexInputDistributor()
+    {
+        $distributors = distributor::all();
+        $user = Auth::user();
+
+        return view('admin.input_distributor.index', compact('distributors', 'user'));
+    }
+
+    public function addDistributor(Request $req)
+    {
+        distributor::create([
+            'nama_distributor' => $req->nama,
+            'alamat' => $req->alamat,
+            'telepon' => $req->telepon,
+        ]);
+
+        return back()->with('success', 'Data Berhasil Ditambahkan');
+    }
+
+    public function editDistributor(Request $req)
+    {
+        $distributor = distributor::where('id_distributor',$req->id_distributor);
+        $distributor->update([
+            'nama_distributor' => $req->nama,
+            'alamat' => $req->alamat,
+            'telepon' => $req->telepon,
+        ]);
+
+        return back()->with('success', 'Data Berhasil Diubah');
+    }
+
+    public function deleteDistributor(Request $req)
+    {
+        $distributor = distributor::where('id_distributor', $req->id_distributor);
+        $distributor->delete();
 
         return back()->with('success', 'Data Berhasil Dihapus');
     }

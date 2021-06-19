@@ -50,7 +50,7 @@
                         Inputan
                     </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Input Distributor</a></li>
+                            <li><a class="dropdown-item" href="{{ url(Auth::user()->level.'/input-distributor') }}">Input Distributor</a></li>
                             <li><a class="dropdown-item" href="{{ url(Auth::user()->level.'/input-buku') }}">Input Buku</a></li>
                         </ul>
                 </li>

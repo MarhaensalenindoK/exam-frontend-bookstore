@@ -30,18 +30,21 @@ Route::group(['middleware' => ['auth']],function(){
     Route::group(['middleware' => ['check_login:admin']],function(){
         Route::prefix('admin')->group(function () {
             Route::resource('/', AdminStoreController::class);
-            Route::get('/pasok-buku', [Controllers\AdminPasokBukuController::class, 'index']);
+            Route::get('/pasok-buku', [Controllers\AdminLaporanController::class, 'indexPasokBuku']);
+            Route::get('/filter-pasok-buku', [Controllers\AdminLaporanController::class, 'indexFilterPasokBuku']);
+            Route::post('/filter-pasok-buku', [Controllers\AdminLaporanController::class, 'filterByDistributor']);
+            Route::get('/get-pasok', [Controllers\AdminLaporanController::class, 'getPasok']);
+            Route::get('/filter-pasok-by-year', [Controllers\AdminLaporanController::class, 'pasokByYear']);
 
-            Route::get('/input-buku', [Controllers\AdminInputBukuController::class, 'index']);
-            Route::post('/input-buku', [Controllers\AdminInputBukuController::class, 'addBook']);
-            Route::patch('/edit-buku', [Controllers\AdminInputBukuController::class, 'editBook']);
-            Route::delete('/delete-book/{id_buku}', [Controllers\AdminInputBukuController::class, 'deleteBook']);
+            Route::get('/input-buku', [Controllers\AdminInputController::class, 'indexInputBuku']);
+            Route::post('/input-buku', [Controllers\AdminInputController::class, 'addBook']);
+            Route::patch('/edit-buku', [Controllers\AdminInputController::class, 'editBook']);
+            Route::delete('/delete-book/{id_buku}', [Controllers\AdminInputController::class, 'deleteBook']);
 
-            Route::get('/filter-pasok-buku', [Controllers\AdminFilterPasokBukuController::class, 'index']);
-            Route::post('/filter-pasok-buku', [Controllers\AdminFilterPasokBukuController::class, 'filterByDistributor']);
-
-            Route::get('/get-pasok', [Controllers\AdminPasokBukuController::class, 'getPasok']);
-            Route::get('/filter-pasok-by-year', [Controllers\AdminPasokBukuController::class, 'pasokByYear']);
+            Route::get('/input-distributor', [Controllers\AdminInputController::class, 'indexInputDistributor']);
+            Route::post('/input-distributor', [Controllers\AdminInputController::class, 'addDistributor']);
+            Route::patch('/input-distributor', [Controllers\AdminInputController::class, 'editDistributor']);
+            Route::delete('/input-distributor', [Controllers\AdminInputController::class, 'deleteDistributor']);
         });
     });
     Route::group(['middleware' => ['check_login:kasir']],function(){

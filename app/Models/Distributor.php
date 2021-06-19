@@ -11,6 +11,6 @@ class Distributor extends Model
     protected $table = "distributor";
     protected $primarykey = "id_distributor";
     protected $fillable = [
-        'id_buku', 'jumlah', 'tanggal'
+        'nama_distributor', 'alamat', 'telepon'
     ];
 }
