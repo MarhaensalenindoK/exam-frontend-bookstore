@@ -64,6 +64,9 @@
                 }
                 no = 1
                 $.each(response, function (i, val) {
+                    if (val.distributor == null) {
+                        return;
+                    }
                     html = `
                     <tr>
                         <td>${no}</td>

@@ -57,7 +57,7 @@ class AdminLaporanController extends Controller
     {
         $suplys = Suply::all()->where('id_distributor', $req->distributor);
         $distributor = Distributor::where('id_distributor', $req->distributor)->first();
-        $mytime = Carbon::now()->format('d-m-Y');
+        $mytime = date("d/m/Y");
         $dataSuply = [];
         foreach($suplys as $suply){
             $suply['distributor'] = $suply->distributor;

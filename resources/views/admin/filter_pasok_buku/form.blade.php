@@ -34,7 +34,6 @@
             </div>
         </div>
     </nav>
-    @dump($dataSuply)
     <div class="container">
         <div class="card text-center mt-5">
             <div class="card-header">
