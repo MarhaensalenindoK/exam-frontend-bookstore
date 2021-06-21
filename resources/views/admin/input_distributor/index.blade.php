@@ -5,7 +5,7 @@
     <!-- Main content -->
     <div class="content">
     <div class="container-fluid">
-    <div class="card card-primary card-outline mt-3">
+    <div class="card card-primary card-outline mt-5">
         <div class="card-body">
             <div class="card-body mb-3">
                 <h3>Form Distributor</h3>

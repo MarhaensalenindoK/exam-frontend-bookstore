@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card card-primary card-outline mt-3">
+<div class="card card-primary card-outline mt-5">
     <div class="card-body">
         <div class="card-body mb-3">
             <h3>Form Buku</h3>
@@ -12,49 +12,61 @@
             @endif
             
         </div>
-
-        <form action="{{url($user->level.'/input-buku')}}" method="post">
-            @csrf
-            <div class="form-group">
-                <h6>Id Buku</h6>
-                <input type="text" id="judul" name="id_buku" class="form-control" value="{{ $bookId }}" readonly>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <span class="text-bold">Tambah Buku</span>
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <form action="{{url($user->level.'/input-buku')}}" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <h6>Id Buku</h6>
+                                <input type="text" id="judul" name="id_buku" class="form-control" value="{{ $bookId }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                <h6>Judul Buku</h6>
+                                <input type="text" id="judul" name="judul" class="form-control" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <h6>No ISBN</h6>
+                                <input type="text" id="noisbn" name="noisbn" class="form-control"  autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <h6>Penulis</h6>
+                                <input type="text" id="penulis" name="penulis" class="form-control" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <h6>Penerbit</h6>
+                                <input type="text" id="penerbit" name="penerbit" class="form-control" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <h6>Tahun Terbit</h6>
+                                <input type="text" id="tahun" name="tahun" class="form-control" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <h6>Harga Pokok</h6>
+                                <input type="text" id="harga_pokok" name="harga_pokok" class="form-control" autocomplete="off"> 
+                            </div>
+                            <div class="form-group">
+                                <h6>Harga Jual</h6>
+                                <input type="text" id="harga_jual" name="harga_jual" class="form-control" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <h6>Diskon</h6>
+                                <input type="number" min="0" id="diskon" name="diskon" class="form-control w-25" autocomplete="off">
+                            </div>
+                            <div class="form-group mt-5">
+                                <button type="submit" class="btn btn-primary">Simpan Data</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <h6>Judul Buku</h6>
-                <input type="text" id="judul" name="judul" class="form-control" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <h6>No ISBN</h6>
-                <input type="text" id="noisbn" name="noisbn" class="form-control"  autocomplete="off">
-            </div>
-            <div class="form-group">
-                <h6>Penulis</h6>
-                <input type="text" id="penulis" name="penulis" class="form-control" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <h6>Penerbit</h6>
-                <input type="text" id="penerbit" name="penerbit" class="form-control" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <h6>Tahun Terbit</h6>
-                <input type="text" id="tahun" name="tahun" class="form-control" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <h6>Harga Pokok</h6>
-                <input type="text" id="harga_pokok" name="harga_pokok" class="form-control" autocomplete="off"> 
-            </div>
-            <div class="form-group">
-                <h6>Harga Jual</h6>
-                <input type="text" id="harga_jual" name="harga_jual" class="form-control" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <h6>Diskon</h6>
-                <input type="number" min="0" id="diskon" name="diskon" class="form-control w-25" autocomplete="off">
-            </div>
-            <div class="form-group mt-5">
-                <button type="submit" class="btn btn-primary">Simpan Data</button>
-            </div>
-        </form>
+        </div>
     </div>
     
     <div class="card-body mt-3">

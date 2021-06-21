@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card text-center">
+<div class="card text-center mt-5">
     <div class="card-header">
         {{$user['name']}} <br>
         <span class=" text-uppercase">{{ $user['level'] }}</span>

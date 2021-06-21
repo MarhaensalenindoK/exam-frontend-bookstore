@@ -59,18 +59,18 @@
                         Tambah
                     </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Input Pasok Buku</a></li>
+                            <li><a class="dropdown-item disabled" href="#">Input Pasok Buku</a></li>
                         </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Laporan
                     </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Semua Data Buku</a></li>
-                            <li><a class="dropdown-item" href="#">Filter Penulis Buku</a></li>
-                            <li><a class="dropdown-item" href="#">Buku yang Sering Terjual</a></li>
-                            <li><a class="dropdown-item" href="#">Buku yang Tidak Pernah Terjual</a></li>
+                        <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item disabled" href="#">Semua Data Buku</a></li>
+                            <li><a class="dropdown-item disabled" href="#">Filter Penulis Buku</a></li>
+                            <li><a class="dropdown-item disabled" href="#">Buku yang Sering Terjual</a></li>
+                            <li><a class="dropdown-item disabled" href="#">Buku yang Tidak Pernah Terjual</a></li>
                             <li><a class="dropdown-item" href="{{url(Auth::user()->level.'/pasok-buku')}}">Pasok Buku</a></li>
                             <li><a class="dropdown-item" href="{{url(Auth::user()->level.'/filter-pasok-buku')}}">Filter Pasok Buku</a></li>
                         </ul>

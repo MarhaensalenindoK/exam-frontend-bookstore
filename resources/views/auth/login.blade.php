@@ -34,18 +34,14 @@
                                     </div>
                                     @endif
                                     <div class="card-header">
-                                        <h3 class="text-center font-weight-light my-4">LOGIN TOKO BUKU</h3>
+                                        <h3 class="text-center font-weight-light my-4">Silahkan Login Terlebih Dahulu</h3>
                                     </div>
                                     <div class="card-body">
                                         <form action="{{url('login')}}" method="POST" id="logForm">
                                             @csrf
                                             <div class="form-group">
                                                 @error('login_gagal')
-                                                    {{-- <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span> --}}
                                                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                        {{-- <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span> --}}
                                                         <span class="alert-inner--text"><strong>Warning!</strong> {{ $message }}</span>
                                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>

@@ -6,7 +6,7 @@
         <div class="controls">
             <form method="post" class=" myform form-group form-inline">
                 <label>Periode :</label>
-                <input type="text" name="cmbTglAwal" id="tanggal" class="tcal form-control tcalInput" placeholder="YY-MM-DD">
+                <input type="text" name="cmbTglAwal" id="tanggal" class="tcal form-control tcalInput" placeholder="YYYY-MM-DD">
                 <br>
                 <button type="button" name="btnTampil" class="form-group btn btn-info" onclick="getFilterYear()">Tampilkan</button>
                 <button type="button" name="refresh" class="form-group btn btn-primary">Refresh</button>
@@ -14,7 +14,7 @@
             </form>
         </div>
     </div>
-    <div class="table-responsive">
+    <div class="table-responsive mt-5">
         <table class=" table table-hover table-bordered">
             <thead>
                 <th>No</th>
